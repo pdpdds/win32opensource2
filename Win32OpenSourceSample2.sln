@@ -27,6 +27,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "agarEx", "agarEx\agarEx.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "agarEx2", "agarEx2\agarEx2.vcxproj", "{5A6C55F3-E212-41E6-A687-B41C1EA3EE1D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fluidSynthEx", "fluidSynthEx\fluidSynthEx.vcxproj", "{8C790785-483A-4C7F-8D4B-E128C7AF4F0B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "portaudioEx", "portaudioEx\portaudioEx.vcxproj", "{CF8B1478-A082-4EBC-A682-9A822B7CBCBA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libTorrentClient", "libTorrentEx3\ClientTest.vcxproj", "{14F15E82-8F10-44DD-9534-BE89B6C11DCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -81,6 +87,18 @@ Global
 		{5A6C55F3-E212-41E6-A687-B41C1EA3EE1D}.Debug|Win32.Build.0 = Debug|Win32
 		{5A6C55F3-E212-41E6-A687-B41C1EA3EE1D}.Release|Win32.ActiveCfg = Release|Win32
 		{5A6C55F3-E212-41E6-A687-B41C1EA3EE1D}.Release|Win32.Build.0 = Release|Win32
+		{8C790785-483A-4C7F-8D4B-E128C7AF4F0B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8C790785-483A-4C7F-8D4B-E128C7AF4F0B}.Debug|Win32.Build.0 = Debug|Win32
+		{8C790785-483A-4C7F-8D4B-E128C7AF4F0B}.Release|Win32.ActiveCfg = Release|Win32
+		{8C790785-483A-4C7F-8D4B-E128C7AF4F0B}.Release|Win32.Build.0 = Release|Win32
+		{CF8B1478-A082-4EBC-A682-9A822B7CBCBA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF8B1478-A082-4EBC-A682-9A822B7CBCBA}.Debug|Win32.Build.0 = Debug|Win32
+		{CF8B1478-A082-4EBC-A682-9A822B7CBCBA}.Release|Win32.ActiveCfg = Release|Win32
+		{CF8B1478-A082-4EBC-A682-9A822B7CBCBA}.Release|Win32.Build.0 = Release|Win32
+		{14F15E82-8F10-44DD-9534-BE89B6C11DCC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{14F15E82-8F10-44DD-9534-BE89B6C11DCC}.Debug|Win32.Build.0 = Debug|Win32
+		{14F15E82-8F10-44DD-9534-BE89B6C11DCC}.Release|Win32.ActiveCfg = Release|Win32
+		{14F15E82-8F10-44DD-9534-BE89B6C11DCC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

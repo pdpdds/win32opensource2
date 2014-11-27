@@ -11,9 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5A6C55F3-E212-41E6-A687-B41C1EA3EE1D}</ProjectGuid>
+    <ProjectGuid>{14F15E82-8F10-44DD-9534-BE89B6C11DCC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>agarEx2</RootNamespace>
+    <RootNamespace>ClientTest</RootNamespace>
+    <ProjectName>libTorrentClient</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -50,15 +51,16 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;TORRENT_USE_OPENSSL;TORRENT_BUILDING_SHARED;BOOST_ASIO_DYN_LINK;BOOST_DATE_TIME_DYN_LINK;BOOST_THREAD_DYN_LINK;BOOST_SYSTEM_DYN_LINK;TORRENT_DISABLE_GEO_IP;UNICODE;_UNICODE;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;BOOST_EXCEPTION_DISABLE;BOOST_ASIO_ENABLE_CANCELIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../prebuilt/sdl1.2/include;../../prebuilt2/agar/include;../../prebuilt2/agar/include/agar\core;../../prebuilt/pthreads\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../prebuilt/openssl/include;../../prebuilt/libtorrent/include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../prebuilt/sdl1.2/lib/x86/debug;../../prebuilt2/agar/lib/x86/debug;../../prebuilt\freetype\lib\x86;../../prebuilt\pthreads\lib\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../prebuilt/libtorrent/lib/x86/debug;../../prebuilt/openssl/lib/x86;D:\LibraryBank\libtorrent-rasterbar-1.0.2\bin\msvc-12.0\debug\boost-source\link-static\threading-multi</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32.lib;ssleay32.lib;libtorrent.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -82,13 +84,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="mytheme.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="agarEx2.cpp" />
-    <ClCompile Include="mytheme.cpp" />
+    <ClCompile Include="ClientTest.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
