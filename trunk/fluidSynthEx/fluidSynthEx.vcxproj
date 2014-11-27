@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5A6C55F3-E212-41E6-A687-B41C1EA3EE1D}</ProjectGuid>
+    <ProjectGuid>{8C790785-483A-4C7F-8D4B-E128C7AF4F0B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>agarEx2</RootNamespace>
+    <RootNamespace>fluidSynthEx</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -50,15 +50,14 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../prebuilt/sdl1.2/include;../../prebuilt2/agar/include;../../prebuilt2/agar/include/agar\core;../../prebuilt/pthreads\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../prebuilt2/fluidSynth/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../prebuilt/sdl1.2/lib/x86/debug;../../prebuilt2/agar/lib/x86/debug;../../prebuilt\freetype\lib\x86;../../prebuilt\pthreads\lib\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../prebuilt2/fluidSynth/lib/x86/debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -82,13 +81,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="mytheme.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="agarEx2.cpp" />
-    <ClCompile Include="mytheme.cpp" />
+    <ClCompile Include="fluidSynthEx.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
