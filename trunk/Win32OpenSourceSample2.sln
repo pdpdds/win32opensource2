@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irrxmlEx", "irrxmlEx\irrxmlEx.vcxproj", "{C04CF5D0-6AE0-42F5-B006-4D818BB241F8}"
 EndProject
@@ -34,6 +34,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libTorrentClient", "libTorrentEx3\ClientTest.vcxproj", "{14F15E82-8F10-44DD-9534-BE89B6C11DCC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zthreadEx", "zthreadEx\zthreadEx.vcxproj", "{673EBCD5-7DF6-452C-9419-8EF25F188A75}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wpcapEx", "wpcapEx\wpcapEx.vcxproj", "{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{673EBCD5-7DF6-452C-9419-8EF25F188A75}.Debug|Win32.Build.0 = Debug|Win32
 		{673EBCD5-7DF6-452C-9419-8EF25F188A75}.Release|Win32.ActiveCfg = Release|Win32
 		{673EBCD5-7DF6-452C-9419-8EF25F188A75}.Release|Win32.Build.0 = Release|Win32
+		{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}.Debug|Win32.Build.0 = Debug|Win32
+		{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}.Release|Win32.ActiveCfg = Release|Win32
+		{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
