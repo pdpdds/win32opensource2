@@ -37,6 +37,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zthreadEx", "zthreadEx\zthr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wpcapEx", "wpcapEx\wpcapEx.vcxproj", "{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ByteBufferEx", "ByteBufferEx\ByteBufferEx.vcxproj", "{DD937953-9AAB-45E1-AB92-B3D5C194FCF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -111,6 +113,10 @@ Global
 		{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}.Debug|Win32.Build.0 = Debug|Win32
 		{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}.Release|Win32.ActiveCfg = Release|Win32
 		{1D68E031-B20D-4AF5-B2F0-2101DB3F4E0D}.Release|Win32.Build.0 = Release|Win32
+		{DD937953-9AAB-45E1-AB92-B3D5C194FCF2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DD937953-9AAB-45E1-AB92-B3D5C194FCF2}.Debug|Win32.Build.0 = Debug|Win32
+		{DD937953-9AAB-45E1-AB92-B3D5C194FCF2}.Release|Win32.ActiveCfg = Release|Win32
+		{DD937953-9AAB-45E1-AB92-B3D5C194FCF2}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
