@@ -45,6 +45,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cppformatEx", "cppformatEx\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "popcapEx", "popcapEx\popcapEx.vcxproj", "{D5182A2D-6F34-4219-A07A-D96A7DFEC566}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mysqlppEx", "mysqlppEx\mysqlppEx.vcxproj", "{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -135,6 +137,10 @@ Global
 		{D5182A2D-6F34-4219-A07A-D96A7DFEC566}.Debug|Win32.Build.0 = Debug|Win32
 		{D5182A2D-6F34-4219-A07A-D96A7DFEC566}.Release|Win32.ActiveCfg = Release|Win32
 		{D5182A2D-6F34-4219-A07A-D96A7DFEC566}.Release|Win32.Build.0 = Release|Win32
+		{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}.Debug|Win32.Build.0 = Debug|Win32
+		{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}.Release|Win32.ActiveCfg = Release|Win32
+		{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
