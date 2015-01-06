@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ctemplateEx", "ctemplateEx\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cppformatEx", "cppformatEx\cppformatEx.vcxproj", "{23667DC0-F4FA-4122-86E4-EE5430732EE6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "popcapEx", "popcapEx\popcapEx.vcxproj", "{D5182A2D-6F34-4219-A07A-D96A7DFEC566}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -129,6 +131,10 @@ Global
 		{23667DC0-F4FA-4122-86E4-EE5430732EE6}.Debug|Win32.Build.0 = Debug|Win32
 		{23667DC0-F4FA-4122-86E4-EE5430732EE6}.Release|Win32.ActiveCfg = Release|Win32
 		{23667DC0-F4FA-4122-86E4-EE5430732EE6}.Release|Win32.Build.0 = Release|Win32
+		{D5182A2D-6F34-4219-A07A-D96A7DFEC566}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D5182A2D-6F34-4219-A07A-D96A7DFEC566}.Debug|Win32.Build.0 = Debug|Win32
+		{D5182A2D-6F34-4219-A07A-D96A7DFEC566}.Release|Win32.ActiveCfg = Release|Win32
+		{D5182A2D-6F34-4219-A07A-D96A7DFEC566}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
