@@ -47,6 +47,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "popcapEx", "popcapEx\popcap
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mysqlppEx", "mysqlppEx\mysqlppEx.vcxproj", "{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "v8Ex1", "v8Ex1\v8Ex1.vcxproj", "{98954E16-7C39-4BB5-96ED-4446BD5FB3DD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "v8Ex2", "v8Ex2\v8Ex2.vcxproj", "{09E93B57-6D12-411B-9A3C-9AD6BF4DC345}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -141,6 +145,14 @@ Global
 		{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}.Debug|Win32.Build.0 = Debug|Win32
 		{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}.Release|Win32.ActiveCfg = Release|Win32
 		{F091EFD1-9932-4F3C-B26E-26D1DC8AC740}.Release|Win32.Build.0 = Release|Win32
+		{98954E16-7C39-4BB5-96ED-4446BD5FB3DD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{98954E16-7C39-4BB5-96ED-4446BD5FB3DD}.Debug|Win32.Build.0 = Debug|Win32
+		{98954E16-7C39-4BB5-96ED-4446BD5FB3DD}.Release|Win32.ActiveCfg = Release|Win32
+		{98954E16-7C39-4BB5-96ED-4446BD5FB3DD}.Release|Win32.Build.0 = Release|Win32
+		{09E93B57-6D12-411B-9A3C-9AD6BF4DC345}.Debug|Win32.ActiveCfg = Debug|Win32
+		{09E93B57-6D12-411B-9A3C-9AD6BF4DC345}.Debug|Win32.Build.0 = Debug|Win32
+		{09E93B57-6D12-411B-9A3C-9AD6BF4DC345}.Release|Win32.ActiveCfg = Release|Win32
+		{09E93B57-6D12-411B-9A3C-9AD6BF4DC345}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

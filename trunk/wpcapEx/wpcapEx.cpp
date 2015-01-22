@@ -120,7 +120,7 @@ int main(int argc, char **argv)
 			fprintf(stderr, "\nUnable to open the adapter.\n");
 			return -2;
 		}
-	}d
+	}
 	else usage();
 
 	if (filter != NULL)
