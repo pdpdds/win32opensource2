@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{47BF9CC9-057C-4A9E-B614-2267B2FDE3FF}</ProjectGuid>
+    <ProjectGuid>{E123CD05-C440-41A5-B343-84CF8C00B4FD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>odeEx</RootNamespace>
+    <RootNamespace>cairoEx</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -50,14 +50,14 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>dDOUBLE;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../prebuilt2/ode/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../prebuilt2/gtk3/lib/glib-2.0/include;../../prebuilt2/gtk3/include/gtk-3.0;../../prebuilt2/gtk3/include/cairo;../../prebuilt2/gtk3/include/pango-1.0;../../prebuilt2/gtk3/include/atk-1.0;../../prebuilt2/gtk3/include/pixman-1;../../prebuilt2/gtk3/include/freetype2;../../prebuilt2/gtk3/include/libpng15;../../prebuilt2/gtk3/include/gdk-pixbuf-2.0;../../prebuilt2/gtk3/include/glib-2.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../prebuilt2/ode/lib/x86/debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../prebuilt2/cairo/lib/x86;../../prebuilt/freetype/lib/x86;../../prebuilt2/gtk3/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -69,12 +69,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../../prebuilt2/gtk3/lib/glib-2.0/include;../../prebuilt2/gtk3/include/gtk-3.0;../../prebuilt2/gtk3/include/cairo;../../prebuilt2/gtk3/include/pango-1.0;../../prebuilt2/gtk3/include/atk-1.0;../../prebuilt2/gtk3/include/pixman-1;../../prebuilt2/gtk3/include/freetype2;../../prebuilt2/gtk3/include/libpng15;../../prebuilt2/gtk3/include/gdk-pixbuf-2.0;../../prebuilt2/gtk3/include/glib-2.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../../prebuilt2/cairo/lib/x86;../../prebuilt/freetype/lib/x86;../../prebuilt2/gtk3/lib;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -85,7 +87,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="odeEx.cpp" />
+    <ClCompile Include="cairoEx.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

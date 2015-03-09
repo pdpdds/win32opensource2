@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{47BF9CC9-057C-4A9E-B614-2267B2FDE3FF}</ProjectGuid>
+    <ProjectGuid>{8F2AB2E8-8DF9-4208-BCAE-A5153136325B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>odeEx</RootNamespace>
+    <RootNamespace>libashttpEx</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -50,14 +50,14 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>dDOUBLE;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../prebuilt2/ode/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../prebuilt/openssl/include;../../prebuilt2/libashttp/include;../../prebuilt2/templog/include;../../prebuilt2/libashttp/include/client;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../prebuilt2/ode/lib/x86/debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../prebuilt2/libashttp/lib/x86/debug;../../prebuilt/openssl/lib/x86;../../prebuilt2/templog/lib/x86/debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -85,7 +85,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="odeEx.cpp" />
+    <ClCompile Include="libashttpEx.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
