@@ -149,6 +149,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rubyEx", "rubyEx\rubyEx.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sociEx", "sociEx\sociEx.vcxproj", "{DF45C5B9-329F-44F6-A794-6D12875039AF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "enetServer", "enetServer\enetServer.vcxproj", "{99D84FE6-0501-4C84-AC53-4680EA38DFE0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "enetClient", "enetClient\enetClient.vcxproj", "{E6102633-2679-4262-A5E9-ACBA1F76127A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -447,6 +451,14 @@ Global
 		{DF45C5B9-329F-44F6-A794-6D12875039AF}.Debug|Win32.Build.0 = Debug|Win32
 		{DF45C5B9-329F-44F6-A794-6D12875039AF}.Release|Win32.ActiveCfg = Release|Win32
 		{DF45C5B9-329F-44F6-A794-6D12875039AF}.Release|Win32.Build.0 = Release|Win32
+		{99D84FE6-0501-4C84-AC53-4680EA38DFE0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99D84FE6-0501-4C84-AC53-4680EA38DFE0}.Debug|Win32.Build.0 = Debug|Win32
+		{99D84FE6-0501-4C84-AC53-4680EA38DFE0}.Release|Win32.ActiveCfg = Release|Win32
+		{99D84FE6-0501-4C84-AC53-4680EA38DFE0}.Release|Win32.Build.0 = Release|Win32
+		{E6102633-2679-4262-A5E9-ACBA1F76127A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E6102633-2679-4262-A5E9-ACBA1F76127A}.Debug|Win32.Build.0 = Debug|Win32
+		{E6102633-2679-4262-A5E9-ACBA1F76127A}.Release|Win32.ActiveCfg = Release|Win32
+		{E6102633-2679-4262-A5E9-ACBA1F76127A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
