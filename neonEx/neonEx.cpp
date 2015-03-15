@@ -31,9 +31,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	
 
 	const std::string host("http://211.47.85.248:18080/webdav/");
-	const std::string user("darkx3");
-	const std::string pass("genius!3456");
-	const std::string uri("darkx3");
+	const std::string user("user");
+	const std::string pass("password");
+	const std::string uri("game");
 	const unsigned port = 18000;
 
 	WebdavClient webdavClient(host, port, user, pass);
