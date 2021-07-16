@@ -7,7 +7,7 @@
 using namespace irr;
 using namespace io;
 
-#pragma comment(lib, "Irrlicht.lib")
+#pragma comment(lib, "irrxml.lib")
 
 void main()
 {
@@ -31,7 +31,7 @@ void main()
 			messageText = xml->getNodeData();
 			break;
 		case EXN_ELEMENT:
-			if (!strcmp("model", xml->getNodeName()))
+			if (!strcmp("startUpModel", xml->getNodeName()))
 			{
 				modelFile = xml->getAttributeValue("file");
 				printf("file : %s\n", modelFile.c_str());
