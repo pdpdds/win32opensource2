@@ -1,7 +1,3 @@
-// irrKlang.cpp : 콘솔 응용 프로그램에 대한 진입점을 정의합니다.
-//
-
-#include "stdafx.h"
 #include <iostream>
 #include <irrKlang.h>
 
@@ -11,18 +7,18 @@ using namespace irrklang;
 
 int main(int argc, const char** argv)
 {
-	// start the sound engine with default parameters
+	//사운드 엔진의 생성
 	ISoundEngine* engine = createIrrKlangDevice();
 
 	if (!engine)
-		return 0; // error starting up the engine
+		return 0; 
 
-	// play some sound stream, looped
+	//mp3 파일을 연주한다.
 	engine->play2D("sample.mp3", true);
 
 	char i = 0;
-	std::cin >> i; // wait for user to press some key
+	std::cin >> i; //종료를 위해 키 입력을 대기한다.
 
-	engine->drop(); // delete engine
+	engine->drop(); //엔진 객체를 제거한다.
 	return 0;
 }
