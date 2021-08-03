@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include <iostream>
 #include "flatbuffers/flatbuffers.h"
 
 #include "monster_generated.h"
@@ -15,7 +16,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	auto vec = Vec3(1, 2, 3);
 
-	auto name = builder.CreateString("MyMonster");
+	auto name = builder.CreateString("Devil Inside");
 
 	unsigned char inv_data[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	auto inventory = builder.CreateVector(inv_data, 10);
@@ -30,6 +31,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	builder.Finish(mloc);
 	
 	auto monster = GetMonster(builder.GetBufferPointer());
+	std::cout << "monster name : " << monster->name()->c_str() << std::endl;
 
 	return 0;
 }

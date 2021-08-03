@@ -1,18 +1,13 @@
-// pantheiosEx.cpp : 콘솔 응용 프로그램에 대한 진입점을 정의합니다.
-//
+#include "pantheios/pantheios.hpp"
 
-#include "stdafx.h"
-#include "pantheios/pantheios.hpp" //primary header file, always be included
-#include "pantheios/frontends/stock.h"
+//프로세스 이름을 라이브러리에 알려줌
+extern "C" const PAN_CHAR_T PANTHEIOS_FE_PROCESS_IDENTITY[] = PANTHEIOS_LITERAL_STRING("pantheiosEx.exe");
 
-//Specify process identity
-const PAN_CHAR_T PANTHEIOS_FE_PROCESS_IDENTITY[] = PANTHEIOS_LITERAL_STRING("pantheiosEx.exe");
-
-#pragma comment(lib, "pantheios.1.util.vc12.dll.debug.lib")
-#pragma comment(lib, "pantheios.1.core.vc12.dll.debug.lib")
-#pragma comment(lib, "pantheios.1.fe.simple.vc12.dll.debug.lib")
-#pragma comment(lib, "pantheios.1.be.fprintf.vc12.dll.debug.lib")
-#pragma comment(lib, "pantheios.1.bec.fprintf.vc12.dll.debug.lib")
+#pragma comment(lib, "pantheios.1.util.vc15.dll.debug.lib")
+#pragma comment(lib, "pantheios.1.core.vc15.dll.debug.lib")
+#pragma comment(lib, "pantheios.1.fe.simple.vc15.dll.debug.lib")
+#pragma comment(lib, "pantheios.1.be.fprintf.vc15.dll.debug.lib")
+#pragma comment(lib, "pantheios.1.bec.fprintf.vc15.dll.debug.lib")
 
 int main(int argc, char** argv){
 

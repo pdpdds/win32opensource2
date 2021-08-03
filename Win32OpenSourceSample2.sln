@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irrxmlEx", "irrxmlEx\irrxmlEx.vcxproj", "{C04CF5D0-6AE0-42F5-B006-4D818BB241F8}"
 EndProject
@@ -132,6 +132,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CFugueEx", "CFugueEx\CFugueEx.vcxproj", "{E5E48272-EFF6-40E4-A86C-DE856BE266CD}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mbedtlsEx", "mbedtlsEx\mbedtlsEx.vcxproj", "{E7302338-6A93-4B0C-8205-85943D6D6726}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stlsoftex", "stlsoftex\stlsoftex.vcxproj", "{9367DF20-1384-4125-B5AB-19B79AC4FB14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -399,8 +401,15 @@ Global
 		{E7302338-6A93-4B0C-8205-85943D6D6726}.Debug|Win32.Build.0 = Debug|Win32
 		{E7302338-6A93-4B0C-8205-85943D6D6726}.Release|Win32.ActiveCfg = Release|Win32
 		{E7302338-6A93-4B0C-8205-85943D6D6726}.Release|Win32.Build.0 = Release|Win32
+		{9367DF20-1384-4125-B5AB-19B79AC4FB14}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9367DF20-1384-4125-B5AB-19B79AC4FB14}.Debug|Win32.Build.0 = Debug|Win32
+		{9367DF20-1384-4125-B5AB-19B79AC4FB14}.Release|Win32.ActiveCfg = Release|Win32
+		{9367DF20-1384-4125-B5AB-19B79AC4FB14}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5DE091F-51D5-469C-9F40-DDD6825BE347}
 	EndGlobalSection
 EndGlobal
