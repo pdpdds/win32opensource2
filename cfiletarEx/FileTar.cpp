@@ -1,6 +1,5 @@
-//Author :- Nish [nishforever@vsnl.com]
+#include <Windows.h>
 
-#include "stdafx.h"
 #include "FileTar.h"
 
 
