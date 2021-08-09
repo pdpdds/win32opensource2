@@ -137,6 +137,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stlsoftex", "stlsoftex\stls
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cfiletarEx", "cfiletarEx\cfiletarEx.vcxproj", "{597F38CA-0CB6-4C5A-A519-55F76043B685}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7zipppex", "7zipppex\7zipppex.vcxproj", "{04AB7D3A-5A52-4043-B3DA-C2DD9DF25D34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -411,6 +413,10 @@ Global
 		{597F38CA-0CB6-4C5A-A519-55F76043B685}.Debug|Win32.Build.0 = Debug|Win32
 		{597F38CA-0CB6-4C5A-A519-55F76043B685}.Release|Win32.ActiveCfg = Release|Win32
 		{597F38CA-0CB6-4C5A-A519-55F76043B685}.Release|Win32.Build.0 = Release|Win32
+		{04AB7D3A-5A52-4043-B3DA-C2DD9DF25D34}.Debug|Win32.ActiveCfg = Debug|Win32
+		{04AB7D3A-5A52-4043-B3DA-C2DD9DF25D34}.Debug|Win32.Build.0 = Debug|Win32
+		{04AB7D3A-5A52-4043-B3DA-C2DD9DF25D34}.Release|Win32.ActiveCfg = Release|Win32
+		{04AB7D3A-5A52-4043-B3DA-C2DD9DF25D34}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
