@@ -135,6 +135,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mbedtlsEx", "mbedtlsEx\mbed
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stlsoftex", "stlsoftex\stlsoftex.vcxproj", "{9367DF20-1384-4125-B5AB-19B79AC4FB14}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cfiletarEx", "cfiletarEx\cfiletarEx.vcxproj", "{597F38CA-0CB6-4C5A-A519-55F76043B685}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -405,6 +407,10 @@ Global
 		{9367DF20-1384-4125-B5AB-19B79AC4FB14}.Debug|Win32.Build.0 = Debug|Win32
 		{9367DF20-1384-4125-B5AB-19B79AC4FB14}.Release|Win32.ActiveCfg = Release|Win32
 		{9367DF20-1384-4125-B5AB-19B79AC4FB14}.Release|Win32.Build.0 = Release|Win32
+		{597F38CA-0CB6-4C5A-A519-55F76043B685}.Debug|Win32.ActiveCfg = Debug|Win32
+		{597F38CA-0CB6-4C5A-A519-55F76043B685}.Debug|Win32.Build.0 = Debug|Win32
+		{597F38CA-0CB6-4C5A-A519-55F76043B685}.Release|Win32.ActiveCfg = Release|Win32
+		{597F38CA-0CB6-4C5A-A519-55F76043B685}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
