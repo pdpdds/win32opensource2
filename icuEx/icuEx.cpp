@@ -1,18 +1,25 @@
-// icuEx.cpp : 콘솔 응용 프로그램에 대한 진입점을 정의합니다.
-//
 
-#include "stdafx.h"
+
+#include "unicode/utypes.h"
+
+#include "unicode/caniter.h"
+#include "unicode/normalizer2.h"
+#include "unicode/uchar.h"
+#include "unicode/uniset.h"
+#include "unicode/usetiter.h"
+#include "unicode/ustring.h"
+#include "unicode/utf16.h"
+
+
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "unicode/ustring.h"
-#include "unicode/utypes.h"
-#include "unicode/uloc.h"
-#include "unicode/ucol.h"
 
+U_NAMESPACE_BEGIN
 #pragma comment(lib, "icuucd.lib")
 
-int _tmain(int argc, _TCHAR* argv[])
+
+int main(int argc, char* argv[])
 {
 
 	std::ifstream f("config.xml");
@@ -33,3 +40,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
+U_NAMESPACE_END
+
+int main(int argc, char* argv[])
+{
+	icu_69::main(argc, argv);
+	return 0;
+}

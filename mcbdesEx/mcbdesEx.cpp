@@ -28,6 +28,11 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	if (desEncrypt.McbEncrypt("Encrypted with triple DES"))
 	{
+
+		desEncrypt.McbGetCryptogram();
+
+		printf("Encryption (%d) bytes: %s\n",
+			desEncrypt.McbGetCryptogramSize(), desEncrypt.McbGetCryptogram());
 		/*
 		*********************************************************************
 		* Perform triple DES decryption - use the buffer stored in the

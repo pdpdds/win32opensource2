@@ -1,11 +1,9 @@
-// lzmaEx.cpp : 콘솔 응용 프로그램에 대한 진입점을 정의합니다.
-//
-
-#include "stdafx.h"
 #include <string>
+#include <iostream>
+
 #include "lzma.h"
 
-#pragma comment(lib, "lzma")
+#pragma comment(lib, "liblzma")
 
 std::string CompressWithLzma(const std::string& in, int level) {
 	std::string result;
@@ -56,11 +54,15 @@ std::string DecompressWithLzma(const std::string& in) {
 	}
 }
 
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char* argv[])
 {
 	const std::string szSampleString = "This is a Test String!!";
 	std::string szCompressed = CompressWithLzma(szSampleString, 0);
-	std::string szDeCompressed = DecompressWithLzma(szCompressed);
+
+	std::cout << "compressed : " << szCompressed << std::endl;
+	std::string szDecompressed = DecompressWithLzma(szCompressed);
+
+	std::cout << "uncompressed : " << szDecompressed << std::endl;
 	return 0;
 }
 
