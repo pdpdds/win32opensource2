@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sdl.h>
+#include <sdl2/sdl.h>
 #include <iostream>
 
 #include "FreeImage.h"
@@ -15,8 +15,6 @@
 #else
 #pragma comment(lib, "freeimage.lib")
 #endif
-
-#pragma comment(lib, "sdl2.lib")
 
 // ----------------------------------------------------------
 
@@ -148,7 +146,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	
 	FIBITMAP *dib = NULL;
 	
-	FILE *file = fopen("test1.png", "rb");
+	FILE *file = fopen("sample.png", "rb");
 	fseek(file, 0, SEEK_END);	
 	int fileSize = ftell(file);
 	fseek(file, 0, SEEK_SET);
