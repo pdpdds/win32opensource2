@@ -143,6 +143,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mcbdesEx", "mcbdesEx\mcbdes
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freeimageEx", "freeimageEx\freeimageEx.vcxproj", "{FEE108C7-1A8E-49BE-92C3-A7C1DFCE1264}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "perlex", "perlex\perlex.vcxproj", "{565EF937-EDA4-45F9-9488-0085E90B2E2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -429,6 +431,10 @@ Global
 		{FEE108C7-1A8E-49BE-92C3-A7C1DFCE1264}.Debug|Win32.Build.0 = Debug|Win32
 		{FEE108C7-1A8E-49BE-92C3-A7C1DFCE1264}.Release|Win32.ActiveCfg = Release|Win32
 		{FEE108C7-1A8E-49BE-92C3-A7C1DFCE1264}.Release|Win32.Build.0 = Release|Win32
+		{565EF937-EDA4-45F9-9488-0085E90B2E2A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{565EF937-EDA4-45F9-9488-0085E90B2E2A}.Debug|Win32.Build.0 = Debug|Win32
+		{565EF937-EDA4-45F9-9488-0085E90B2E2A}.Release|Win32.ActiveCfg = Release|Win32
+		{565EF937-EDA4-45F9-9488-0085E90B2E2A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

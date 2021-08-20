@@ -1,220 +1,148 @@
-// freeimageEx.cpp : 콘솔 응용 프로그램에 대한 진입점을 정의합니다.
-//
 
-#include "stdafx.h"
-#include <assert.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sdl2/sdl.h>
-#include <iostream>
+#define SDL_MAIN_HANDLED
+#include <SDL2/SDL.h>
 
-#include "FreeImage.h"
 
-#ifdef _DEBUG
-#pragma comment(lib, "freeimaged.lib")
-#else
-#pragma comment(lib, "freeimage.lib")
-#endif
+#include <FreeImage.h>
 
-// ----------------------------------------------------------
 
-fi_handle g_load_address;
 
-// ----------------------------------------------------------
 
-inline unsigned _stdcall
-_ReadProc(void *buffer, unsigned size, unsigned count, fi_handle handle) {
-	BYTE *tmp = (BYTE *)buffer;
+#include <FreeImage.h>
 
-	for (unsigned c = 0; c < count; c++) {
-		memcpy(tmp, g_load_address, size);
+#include <SDL2/SDL.h>
 
-		g_load_address = (BYTE *)g_load_address + size;
-
-		tmp += size;
-	}
-
-	return count;
+char* parse_args_get_filename(int argc, char* argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s FILENAME\n", argv[0]);
+        exit(2);
+    }
+    char* filename = argv[1];
+    return filename;
 }
 
-inline unsigned _stdcall
-_WriteProc(void *buffer, unsigned size, unsigned count, fi_handle handle) {
-	// there's not much use for saving the bitmap into memory now, is there?
-
-	return size;
+/** Initialise a FreeImage bitmap and return a pointer to it. */
+FIBITMAP* get_freeimage_bitmap(char* filename) {
+    FREE_IMAGE_FORMAT filetype = FreeImage_GetFileType(filename, 0);
+    FIBITMAP* freeimage_bitmap = FreeImage_Load(filetype, filename, 0);
+    return freeimage_bitmap;
 }
 
-inline int _stdcall
-_SeekProc(fi_handle handle, long offset, int origin) {
-	assert(origin != SEEK_END);
+/** Initialise a SDL surface and return a pointer to it.
+ *
+ *  This function flips the FreeImage bitmap vertically to make it compatible
+ *  with SDL's coordinate system.
+ *
+ *  If the input image is in grayscale a custom palette is created for the
+ *  surface.
+ */
+SDL_Surface* get_sdl_surface(FIBITMAP* freeimage_bitmap, int is_grayscale) {
 
-	if (origin == SEEK_SET) {
-		g_load_address = (BYTE *)handle + offset;
-	}
-	else {
-		g_load_address = (BYTE *)g_load_address + offset;
-	}
+    // Loaded image is upside down, so flip it.
+    FreeImage_FlipVertical(freeimage_bitmap);
 
-	return 0;
+    SDL_Surface* sdl_surface = SDL_CreateRGBSurfaceFrom(
+        FreeImage_GetBits(freeimage_bitmap),
+        FreeImage_GetWidth(freeimage_bitmap),
+        FreeImage_GetHeight(freeimage_bitmap),
+        FreeImage_GetBPP(freeimage_bitmap),
+        FreeImage_GetPitch(freeimage_bitmap),
+        FreeImage_GetRedMask(freeimage_bitmap),
+        FreeImage_GetGreenMask(freeimage_bitmap),
+        FreeImage_GetBlueMask(freeimage_bitmap),
+        0
+    );
+
+    if (sdl_surface == NULL) {
+        fprintf(stderr, "Failed to create surface: %s\n", SDL_GetError());
+        exit(1);
+    }
+
+    if (is_grayscale) {
+        // To display a grayscale image we need to create a custom palette.
+        SDL_Color colors[256];
+        int i;
+        for (i = 0; i < 256; i++) {
+            colors[i].r = colors[i].g = colors[i].b = i;
+        }
+        SDL_SetPaletteColors(sdl_surface->format->palette, colors, 0, 256);
+    }
+
+    return sdl_surface;
 }
 
-inline long _stdcall
-_TellProc(fi_handle handle) {
-	assert((int)handle > (int)g_load_address);
+/** Initialise a SDL window and return a pointer to it. */
+SDL_Window* get_sdl_window(int width, int height) {
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        fprintf(stderr, "SDL couldn't initialise: %s.\n", SDL_GetError());
+        exit(1);
+    }
 
-	return ((int)g_load_address - (int)handle);
+    SDL_Window* sdl_window;
+    sdl_window = SDL_CreateWindow("Image",
+        SDL_WINDOWPOS_CENTERED,
+        SDL_WINDOWPOS_CENTERED,
+        width,
+        height,
+        SDL_WINDOW_BORDERLESS);
+
+    return sdl_window;
 }
 
-int invert_image(int pitch, int height, void* image_pixels)
-{
-	int index;
-	void* temp_row;
-	int height_div_2;
+/** Display the image by rendering the surface as a texture in the window. */
+void render_image(SDL_Window* window, SDL_Surface* surface) {
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+    if (renderer == NULL) {
+        fprintf(stderr, "Failed to create renderer: %s\n", SDL_GetError());
+        exit(1);
+    }
 
-	temp_row = (void *)malloc(pitch);
-	if (NULL == temp_row)
-	{
-		SDL_SetError("Not enough memory for image inversion");
-		return -1;
-	}
-	//if height is odd, don't need to swap middle row 
-	height_div_2 = (int)(height * .5);
-	for (index = 0; index < height_div_2; index++)    {
-		//uses string.h 
-		memcpy((Uint8 *)temp_row,
-			(Uint8 *)(image_pixels)+
-			pitch * index,
-			pitch);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+    if (texture == NULL) {
+        fprintf(stderr, "Failed to load image as texture\n");
+        exit(1);
+    }
 
-		memcpy(
-			(Uint8 *)(image_pixels)+
-			pitch * index,
-			(Uint8 *)(image_pixels)+
-			pitch * (height - index - 1),
-			pitch);
-		memcpy(
-			(Uint8 *)(image_pixels)+
-			pitch * (height - index - 1),
-			temp_row,
-			pitch);
-	}
-	free(temp_row);
-	return 0;
+    SDL_RenderClear(renderer);
+    SDL_RenderCopy(renderer, texture, NULL, NULL);
+    SDL_RenderPresent(renderer);
 }
 
-//This is the function you want to call! 
-int SDL_InvertSurface(SDL_Surface* image)
-{
-	if (NULL == image)
-	{
-		SDL_SetError("Surface is NULL");
-		return -1;
-	}
-	return(invert_image(image->pitch, image->h,
-		image->pixels));
+/** Loop until a key is pressed. */
+void event_loop() {
+    int done = 0;
+    SDL_Event e;
+    while (!done) {
+        while (SDL_PollEvent(&e)) {
+            if (e.type == SDL_KEYDOWN) {
+                done = 1;
+            }
+        }
+    }
 }
 
-SDL_Surface *FiBitmapToSdlSurface(FIBITMAP *fb) {
-	int h = FreeImage_GetHeight(fb), w = FreeImage_GetWidth(fb);
-	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(FreeImage_GetBits(fb),
-		w, h, 32, w*4 , 0xff0000, 0x00ff00, 0x0000ff, 0);
-	return surf;
-}
+int main(int argc, char* argv[]) {
+    char* filename = parse_args_get_filename(argc, argv);
+    FIBITMAP* freeimage_bitmap = get_freeimage_bitmap(filename);
 
+    int is_grayscale = 0;
+    if (FreeImage_GetColorType(freeimage_bitmap) == FIC_MINISBLACK) {
+        // Single channel so ensure image is compressed to 8-bit.
+        is_grayscale = 1;
+        FIBITMAP* tmp_bitmap = FreeImage_ConvertToGreyscale(freeimage_bitmap);
+        FreeImage_Unload(freeimage_bitmap);
+        freeimage_bitmap = tmp_bitmap;
+    }
 
-int _tmain(int argc, _TCHAR* argv[])
-{
-	FreeImageIO io;
+    int width = FreeImage_GetWidth(freeimage_bitmap);
+    int height = FreeImage_GetHeight(freeimage_bitmap);
+    SDL_Window* sdl_window = get_sdl_window(width, height);
+    SDL_Surface* sdl_surface = get_sdl_surface(freeimage_bitmap, is_grayscale);
 
-	io.read_proc = _ReadProc;
-	io.write_proc = _WriteProc;
-	io.tell_proc = _TellProc;
-	io.seek_proc = _SeekProc;
+    render_image(sdl_window, sdl_surface);
+    event_loop();
 
-	//SDL 초기화.
-	if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
-		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
-		return 0;
-	}
-	SDL_Window *pWindow;
-	SDL_Renderer *pRenderer;
-	if (SDL_CreateWindowAndRenderer(640, 480, 0, &pWindow, &pRenderer) < 0)
-	{
-		std::cout << "SDL_CreateWindowAndRenderer Error: " << SDL_GetError() << std::endl;
-		return 0;
-	}
-	
-	FIBITMAP *dib = NULL;
-	
-	FILE *file = fopen("sample.png", "rb");
-	fseek(file, 0, SEEK_END);	
-	int fileSize = ftell(file);
-	fseek(file, 0, SEEK_SET);
-
-	BYTE *pImageBuffer = new BYTE[fileSize];
-
-	fread(pImageBuffer, fileSize, 1, file);
-	fclose(file);
-	
-	g_load_address = pImageBuffer;
-	dib = FreeImage_LoadFromHandle(FIF_PNG, &io, (fi_handle)pImageBuffer);
-
-	SDL_Surface* pSurface = FiBitmapToSdlSurface(dib);
-	SDL_InvertSurface(pSurface);
-
-	SDL_Texture *pTexture = SDL_CreateTextureFromSurface(pRenderer, pSurface);	
-	SDL_FreeSurface(pSurface);
-
-	FreeImage_Unload(dib);
-	delete[] pImageBuffer;
-
-	if (pTexture == 0)
-	{
-		SDL_DestroyRenderer(pRenderer);
-		SDL_DestroyWindow(pWindow);
-		std::cout << "SDL_CreateTextureFromSurface Error: " << SDL_GetError() << std::endl;
-		return 0;
-	}
-
-	bool running = true;
-
-	// 사용자 입력을 받는 코드이다.
-	//윈도우의 경우 Escape 키를 누르면 해당 루프를 벗어날 수 있다.
-	while (running)
-	{
-		SDL_Event event;
-		while (SDL_PollEvent(&event))
-		{
-			if (event.type == SDL_KEYDOWN)
-			{
-				if (event.key.keysym.sym == SDLK_ESCAPE)
-				{
-					running = false;
-				}
-			}
-			else if (event.type == SDL_QUIT)
-			{
-				running = false;
-			}
-		}
-		//화면 클리어
-		SDL_RenderClear(pRenderer);
-		//렌더러에 텍스쳐를 카피
-		SDL_Rect src;
-		src.h = 128;
-		src.w = 64;
-		src.x = 0;
-		src.y = 0;
-		SDL_RenderCopy(pRenderer, pTexture, &src, &src);
-		//화면을 출력한다.
-		SDL_RenderPresent(pRenderer);
-	}
-
-	//생성하 객체를 모두 제거한다.	
-	SDL_DestroyTexture(pTexture);
-	SDL_DestroyRenderer(pRenderer);
-	SDL_DestroyWindow(pWindow);
-	SDL_Quit();
-
-	return 0;
+    FreeImage_Unload(freeimage_bitmap);
+    SDL_FreeSurface(sdl_surface);
+    return 0;
 }
